@@ -1,6 +1,5 @@
-# LogS
-## Информация
-Небольшая библиотека, облегчающая работу с выводом сообщений (Python-style).
+## LogS
+Небольшая библиотека, реализующая Python-style вывод сообщений в потоки std::ofstream.
 
 ## Особенности
 * Поддержка С++20
@@ -8,12 +7,14 @@
 
 ## Использование
 ```cpp
-#include <iostream>
 #include <LogS.h>
+
+// # For std::cout
+#include <iostream>
 
 ...
 
 CLogS LogS(std::cout);
-LogS.print("Hello, world!");
-LogS.print("Hello, ", "world", "!", '\n', 1707, '\n', 22.17f);
+LogS.Print("Hello, world!");
+LogS.Print("Hello, ", "world", "!", '\n', 1707, '\n', 22.17f);
 ```
