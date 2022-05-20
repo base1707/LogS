@@ -15,17 +15,7 @@ public:
     CLogS& operator=(const CLogS&) = delete;
     CLogS& operator=(CLogS&&) = delete;
 
-public:
-    // # One argument (ex: ["Test"])
-    template <typename T>
-    void Print(T&& value)
-    {
-        if (output.good())
-        {
-            output << value << std::endl;
-        }
-    }
-
+private:
     // # Many arguments (ex: ["Test: ", "Hello, world!"])
     template <size_t i = 0, typename... T>
     void Print(std::tuple<T...> t)
@@ -42,6 +32,17 @@ public:
             {
                 output << std::endl;
             }
+        }
+    }
+
+public:
+    // # One argument (ex: ["Test"])
+    template <typename T>
+    void Print(T&& value)
+    {
+        if (output.good())
+        {
+            output << value << std::endl;
         }
     }
 
